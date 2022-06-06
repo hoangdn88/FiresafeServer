@@ -49,7 +49,8 @@ namespace FireFact.Controllers
         //}
 
         [HttpGet("search-by-code")]
-        [Authorize(UserPermission.FACT_VIEW)]
+        //[Authorize(UserPermission.FACT_VIEW)]
+        [AllowAnonymous]
         public async Task<IActionResult> SearchDevice(string code, CancellationToken cancellationToken)
         {
             var pageOption = Request.Headers["PageOption"].ToString();
